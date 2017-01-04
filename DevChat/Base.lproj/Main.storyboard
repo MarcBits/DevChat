@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -21,49 +22,45 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Avj-pn-Kn1" userLabel="PreviewView" customClass="AVCamPreviewView">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8k0-do-uCH" userLabel="PreviewView" customClass="AVCamPreviewView">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
-                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2T3-fn-Pz8" userLabel="Record">
-                                <rect key="frame" x="152.5" y="609" width="70" height="50"/>
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="neK-KF-LFx" userLabel="Camera">
+                                <rect key="frame" x="301" y="28" width="50" height="35"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="70" id="eD6-qv-mC6"/>
-                                    <constraint firstAttribute="height" constant="50" id="t8e-fb-BI8"/>
-                                </constraints>
-                                <state key="normal" image="createsnap_btn"/>
-                                <connections>
-                                    <action selector="recordBtnPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="okt-ks-PLz"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uKQ-ld-ka1" userLabel="Camera">
-                                <rect key="frame" x="297" y="28" width="70" height="50"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="70" id="YDw-WV-l88"/>
-                                    <constraint firstAttribute="height" constant="50" id="xbk-26-qyS"/>
+                                    <constraint firstAttribute="height" constant="35" id="VDX-aZ-9XC"/>
+                                    <constraint firstAttribute="width" constant="50" id="zIy-lh-IB2"/>
                                 </constraints>
                                 <state key="normal" image="camera_icon_snap"/>
                                 <connections>
-                                    <action selector="changeCameraBtnPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1f5-DH-gjG"/>
+                                    <action selector="changeCameraBtnPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="45j-UW-MZ5"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vGP-ut-hI9" userLabel="Record">
+                                <rect key="frame" x="162.5" y="624" width="50" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="SwN-sj-415"/>
+                                    <constraint firstAttribute="height" constant="35" id="l1d-X1-s55"/>
+                                </constraints>
+                                <state key="normal" image="createsnap_btn"/>
+                                <connections>
+                                    <action selector="recordBtnPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="K9Z-es-Mqy"/>
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" red="0.78470414879999995" green="0.88756603000000001" blue="0.73119151589999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="Avj-pn-Kn1" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="3iA-le-CKc"/>
-                            <constraint firstAttribute="trailing" secondItem="uKQ-ld-ka1" secondAttribute="trailing" constant="8" id="4Qs-tf-CAE"/>
-                            <constraint firstItem="Avj-pn-Kn1" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="6t5-Bb-KOK"/>
-                            <constraint firstItem="uKQ-ld-ka1" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="KnX-TW-vfp"/>
-                            <constraint firstItem="Avj-pn-Kn1" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" id="cx2-RR-P1o"/>
-                            <constraint firstItem="2T3-fn-Pz8" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="fym-iQ-pJd"/>
-                            <constraint firstItem="Avj-pn-Kn1" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="lsv-p2-G3m"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="2T3-fn-Pz8" secondAttribute="bottom" constant="8" id="uph-1f-eT4"/>
+                            <constraint firstItem="neK-KF-LFx" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="DgK-NS-dLL"/>
+                            <constraint firstItem="8k0-do-uCH" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="KvH-9c-FiM"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="8k0-do-uCH" secondAttribute="bottom" id="bgB-ru-kyV"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="neK-KF-LFx" secondAttribute="trailing" constant="8" id="jEO-7V-KJG"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="vGP-ut-hI9" secondAttribute="bottom" constant="8" id="juJ-8c-3O9"/>
+                            <constraint firstItem="vGP-ut-hI9" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="nY3-vq-mfp"/>
+                            <constraint firstAttribute="trailing" secondItem="8k0-do-uCH" secondAttribute="trailing" id="tkU-6C-fTs"/>
+                            <constraint firstItem="8k0-do-uCH" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="yS0-IX-UBg"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="cameraButton" destination="uKQ-ld-ka1" id="Jgl-jY-gKm"/>
-                        <outlet property="previewView" destination="Avj-pn-Kn1" id="aBc-75-stk"/>
-                        <outlet property="recordButton" destination="2T3-fn-Pz8" id="9ZK-H8-keR"/>
+                        <outlet property="previewView" destination="8k0-do-uCH" id="LUY-hg-OPp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
