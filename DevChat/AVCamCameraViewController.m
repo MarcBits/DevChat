@@ -697,6 +697,7 @@ typedef NS_ENUM( NSInteger, AVCamLivePhotoMode ) {
 	
 	dispatch_async( self.sessionQueue, ^{
 		if ( ! self.movieFileOutput.isRecording ) {
+
 			if ( [UIDevice currentDevice].isMultitaskingSupported ) {
 				/*
 					Setup background task.
@@ -706,22 +707,27 @@ typedef NS_ENUM( NSInteger, AVCamLivePhotoMode ) {
 					To conclude this background execution, -[endBackgroundTask:] is called in
 					-[captureOutput:didFinishRecordingToOutputFileAtURL:fromConnections:error:] after the recorded file has been saved.
 				*/
+
 				self.backgroundRecordingID = [[UIApplication sharedApplication] beginBackgroundTaskWithExpirationHandler:nil];
 			}
-			
+            
 			// Update the orientation on the movie file output video connection before starting recording.
 			AVCaptureConnection *movieFileOutputConnection = [self.movieFileOutput connectionWithMediaType:AVMediaTypeVideo];
 			movieFileOutputConnection.videoOrientation = videoPreviewLayerVideoOrientation;
-			
+            
 			// Start recording to a temporary file.
 			NSString *outputFileName = [NSUUID UUID].UUIDString;
 			NSString *outputFilePath = [NSTemporaryDirectory() stringByAppendingPathComponent:[outputFileName stringByAppendingPathExtension:@"mov"]];
 			[self.movieFileOutput startRecordingToOutputFileURL:[NSURL fileURLWithPath:outputFilePath] recordingDelegate:self];
+            
+            printf("I'm here!\n");
 		}
 		else {
 			[self.movieFileOutput stopRecording];
 		}
 	} );
+    
+    printf("I made through to the end!\n");
 }
 
 - (void)captureOutput:(AVCaptureFileOutput *)captureOutput didStartRecordingToOutputFileAtURL:(NSURL *)fileURL fromConnections:(NSArray *)connections
